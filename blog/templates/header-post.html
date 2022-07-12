@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ post.article_title }} - MyAwesomBlog</title>
+        <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet" crossorigin="anonymous">
+        <meta name="theme-color" content="#712cf9">
+    </head>
+    <body>
+        <header>
+            <div class="collapse bg-dark" id="navbarHeader">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 offset-md-1 py-4">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="https://www.facebook.com/germanzuiakov" class="text-white">Facebook</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'blog' %}" class="text-white">Blog</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar navbar-dark bg-dark shadow-sm">
+                <div class="container">
+                    <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center">
+                        <strong>Blog - MyAwesomeBlog</strong>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </header>

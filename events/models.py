@@ -2,6 +2,9 @@ from django.db import models
 
 
 # Create your models here.
-class Events(models.Model):
+class Event(models.Model):
     event_img = models.ImageField(upload_to='event_images/')
     event_text = models.CharField(max_length=300)
+
+    def __str__(self):
+        return self.event_text

@@ -1,60 +1,18 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Blog - MyAwesomBlog</title>
-        <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet" crossorigin="anonymous">
-        <meta name="theme-color" content="#712cf9">
-    </head>
-    <body>
-        <header>
-            <div class="collapse bg-dark" id="navbarHeader">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4 offset-md-1 py-4">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="https://getbootstrap.com/docs/5.2/examples/album/#" class="text-white">About me</a>
-                                </li>
-                                <li>
-                                    <a href="https://getbootstrap.com/docs/5.2/examples/album/#" class="text-white">Facebook</a>
-                                </li>
-                                <li>
-                                    <a href="/blog/" class="text-white">Blog</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+{% include 'header-post.html' %}
+    <main>
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <img style="width: 500px;height: auto;" src="{{ post.article_img.url }}" alt="">
+                    <h1 class="fw-light">{{ post.article_title }}</h1>
+                    <p class="date">{{ post.article_date }}</p>
                 </div>
             </div>
-            <div class="navbar navbar-dark bg-dark shadow-sm">
-                <div class="container">
-                    <a href="https://getbootstrap.com/docs/5.2/examples/album/#" class="navbar-brand d-flex align-items-center">
-                        <strong>Blog - MyAwesomeBlog</strong>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-            </div>
-        </header>
-        <main>
-            <section class="py-5 text-center container">
-                <div class="row py-lg-5">
-                    <div class="col-lg-6 col-md-8 mx-auto">
-                        <img src="{{ post.article_img.url }}" alt="">
-                        <h1 class="fw-light">{{ post.article_title }}</h1>
-                        <p class="date">{{ post.article_date }}</p>
-                    </div>
-                </div>
-            </section>
-            <div class="container">
-                <p>
-                    {{ post.article.text }}
-                </p>
-            </div>
-        </main>
-    </body>
-</html>
+        </section>
+        <div class="container">
+            <p>
+                {{ post.article.text }}
+            </p>
+        </div>
+    </main>
+{% include 'footer.html' %}
