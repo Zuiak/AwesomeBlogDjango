@@ -7,3 +7,6 @@ class Article(models.Model):
     article_date = models.DateField()
     article_text = models.CharField(max_length=10000000)
     article_img = models.ImageField('blog_images/')
+
+    def get_summary(self):
+        return self.article_text[:70]
